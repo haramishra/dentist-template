@@ -1,0 +1,81 @@
+---
+import { AppointmentForm } from "@/components/forms/main-contact";
+import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
+import { Calendar, CheckCircle, Clock, Mail, Phone } from "lucide-react";
+---
+
+<section class="py-6 lg:py-12">
+  <div class="mx-auto w-full max-w-2xl">
+    <div class="rounded-lg border p-8 backdrop-blur-sm">
+      <!-- Header Section -->
+      <div class="mb-8 text-center">
+        <div class="mb-4 flex justify-center">
+          <div class="rounded-full p-3">
+            <Calendar className="h-6 w-6" />
+          </div>
+        </div>
+        <h2 class="mb-2 text-3xl font-bold">Book Your Appointment</h2>
+        <h3 class="mb-3 text-lg font-medium">Schedule Your Dental Visit</h3>
+        <p class="text-/70 mx-auto max-w-md text-sm leading-relaxed">
+          Choose your preferred date and time slot for your dental appointment.
+          We'll confirm your booking via WhatsApp and send you all the necessary
+          details.
+        </p>
+      </div>
+
+      <!-- Quick Info -->
+      <div class="mb-6 flex items-center justify-center gap-6 text-sm">
+        <div>
+          {
+            siteConfig.contact?.email?.map((email) => (
+              <a href={email.link} class="flex items-center gap-2">
+                <Mail className="h-4 w-4" />
+                <span>{email.title}</span>
+              </a>
+            ))
+          }
+        </div>
+        <div>
+          {
+            siteConfig.contact?.phone?.map((phone) => (
+              <a class="flex items-center gap-2" href={phone.link}>
+                <Phone className="h-4 w-4" />
+                <span>{phone.title}</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Form -->
+      <AppointmentForm client:only />
+
+      <!-- Footer Note -->
+      <div class="mt-6 border-t pt-4">
+        <p class="text-center text-xs">
+          After clicking "Book Appointment", you'll be redirected to WhatsApp
+          where we'll confirm your appointment details and availability. We'll
+          respond within 15 minutes during business hours.
+        </p>
+      </div>
+
+      <!-- Available Hours Info -->
+      <div class="mt-4 rounded-lg p-4">
+        <h4 class="mb-2 text-center text-sm font-medium">
+          Our Available Hours
+        </h4>
+        <div class="mt-6 grid grid-cols-1 gap-3 text-xs md:grid-cols-2">
+          <div class="flex items-center justify-center gap-2">
+            <Clock className="h-3 w-3" />
+            <span>Morning: 10:00AM - 1:00PM</span>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <Clock className="h-3 w-3" />
+            <span>Evening: 3:00PM - 8:00PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
