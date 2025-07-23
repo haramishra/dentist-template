@@ -121,10 +121,6 @@
   display: none;
 }
 
-button {
-  cursor: pointer;
-}
-
 .paragraph {
   @apply text-base leading-relaxed text-gray-600 lg:text-lg;
 }
