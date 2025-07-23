@@ -1,0 +1,9 @@
+cache
+.cache
+package.json
+package-lock.json
+dist
+.astro
+node_modules
+build
+.contentlayer

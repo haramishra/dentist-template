@@ -1,0 +1,22 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    // Use Prettier as the default formatter
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // Format on save for supported languages
+    "editor.formatOnSave": true,
+    // Specify Prettier config path (required for `.prettierrc.mjs`)
+    "prettier.configPath": ".prettierrc.mjs",
+    // Optional: tailor formatter per language
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[astro]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}

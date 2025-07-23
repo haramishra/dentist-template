@@ -1,0 +1,46 @@
+---
+import { MdxComponents } from "@/components/content/mdx-components";
+import PageHeader from "@/components/nav/page-header.astro";
+import BlogPostLayout from "@/layouts/blog-post.astro";
+import MainLayout from "@/layouts/main-layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("legal");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<"legal">;
+
+const post = Astro.props;
+const slug = Astro.params.slug;
+const { Content } = await post.render();
+
+if (!slug || !post) {
+  return new Response(null, {
+    status: 404,
+    statusText: "Not found",
+  });
+}
+---
+
+<MainLayout
+  title={post.data.title}
+  mainClass="max-w-screen-sm mx-auto px-4 sm:px-6 lg:px-8 lg:py-16 py-4 sm:py-8"
+>
+  <PageHeader heading={post.data.title} />
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            <Content components={MdxComponents} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

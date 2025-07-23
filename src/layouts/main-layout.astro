@@ -1,0 +1,65 @@
+---
+import Footer from "@/components/layout/footer.astro";
+import Header from "@/components/layout/header.astro";
+import { MainNavigationMenu } from "@/components/nav/main-navigation-menu";
+import { cn } from "@/lib/utils";
+import BaseLayout from "./base-layout.astro";
+import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
+import { siteConfig } from "@/config/site";
+import { nav } from "@/config/nav-menu";
+import { buttonVariants } from "@/components/ui/button";
+
+type Props = {
+  title: string;
+  description?: string;
+  mainClass?: string;
+  frontmatter?: { title: string };
+  image?: string;
+};
+
+const { title, description, mainClass, frontmatter, image } = Astro.props;
+const { pathname } = Astro.url;
+---
+
+<BaseLayout
+  title={frontmatter?.title || title}
+  description={description}
+  image={image}
+>
+  <Header className="border-b">
+    <!-- if use Navigation Menu on desktop -->
+    <MainNavigationMenu slot="left-header" client:load pathname={pathname} />
+    <SheetMobileNav slot="mobile-nav-header" client:load pathname={pathname} />
+
+    <div class="flex items-center gap-x-8" slot="right-header">
+      <div class="hidden flex-row items-center justify-center gap-3 lg:flex">
+        {
+          nav.navCTASecondary && (
+            <a
+              class={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+              href={nav.navCTASecondary.href}
+            >
+              {nav.navCTASecondary.icon && (
+                <nav.navCTASecondary.icon className="size-4 mr-2" />
+              )}
+              {nav.navCTASecondary.title}
+            </a>
+          )
+        }
+        <a
+          class={cn(buttonVariants({ variant: "default", size: "sm" }))}
+          href={nav.navCTA.href}
+        >
+          {nav.navCTA.title}
+          {nav.navCTA.icon && <nav.navCTA.icon className="size-4 ml-2" />}
+        </a>
+      </div>
+    </div>
+  </Header>
+
+  <main class={cn(mainClass)}>
+    <slot />
+  </main>
+
+  <Footer />
+</BaseLayout>

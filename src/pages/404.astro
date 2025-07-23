@@ -1,0 +1,100 @@
+---
+import { Button, buttonVariants } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { siteConfig } from "@/config/site";
+import MainLayout from "@/layouts/main-layout.astro";
+import { cn } from "@/lib/utils";
+import { Home, ArrowLeft, Search, Mail, Phone } from "lucide-react";
+---
+
+<MainLayout title="Page not Found">
+  <div
+    class="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 p-4"
+  >
+    <div class="mx-auto max-w-2xl text-center">
+      {/* 404 Visual */}
+      <div class="mb-8">
+        <h1 class="mb-4 text-8xl font-bold md:text-9xl">404</h1>
+      </div>
+
+      {/* Main Content */}
+      <div class="mb-8">
+        <h2 class="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">
+          Page Not Found
+        </h2>
+        <p class="mx-auto mb-6 max-w-md text-lg text-slate-600">
+          We apologize, but the page you're looking for seems to have moved or
+          no longer exists. Let us help you find what you need.
+        </p>
+      </div>
+
+      <a href="/">
+        <Button>Go Home</Button>
+      </a>
+
+      {/* Popular Pages */}
+      <div class="mb-8 py-20">
+        <h3 class="mb-4 text-lg font-semibold text-slate-900">Popular Pages</h3>
+        <div class="flex flex-wrap justify-center gap-2">
+          <a
+            href="/services/strategy"
+            class={cn(buttonVariants({ variant: "link" }), "text-blue-500")}
+          >
+            About Me
+          </a>
+          <a
+            href="/services/digital-transformation"
+            class={cn(buttonVariants({ variant: "link" }), "text-blue-500")}
+          >
+            My Services
+          </a>
+          <a
+            href="/case-studies"
+            class={cn(buttonVariants({ variant: "link" }), "text-blue-500")}
+          >
+            Blog
+          </a>
+          <a
+            href="/insights"
+            class={cn(buttonVariants({ variant: "link" }), "text-blue-500")}
+          >
+            Case Studies
+          </a>
+        </div>
+      </div>
+
+      {/* Contact Information */}
+      <div class="text-sm text-slate-500">
+        <p class="mb-2">Need immediate assistance? Our team is here to help.</p>
+        <div class="flex items-center justify-center gap-6">
+          <div>
+            {
+              siteConfig.contact?.phone.map((phone) => (
+                <a
+                  href={phone.link}
+                  class="flex items-center gap-1 transition-colors hover:text-blue-500"
+                >
+                  <Phone className="h-4 w-4" />
+                  {phone.title}
+                </a>
+              ))
+            }
+          </div>
+          <div>
+            {
+              siteConfig.contact?.email.map((email) => (
+                <a
+                  href={email.link}
+                  class="flex items-center gap-1 transition-colors hover:text-blue-500"
+                >
+                  <Mail className="h-4 w-4" />
+                  {email.title}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

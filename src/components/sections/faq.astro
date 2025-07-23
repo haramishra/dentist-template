@@ -1,0 +1,36 @@
+---
+import siteDetails from "@/config/site-details.json";
+import FaqAccordion from "@/components/FaqAccordion";
+import { siteConfig } from "@/config/site";
+import { buttonVariants } from "../ui/button";
+import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+const { mainCTA } = siteConfig;
+---
+
+<section
+  class="container mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-32"
+>
+  <div class="flex items-center justify-center">
+    <div class="flex flex-col items-start gap-x-12 gap-y-6 md:flex-row">
+      <div>
+        <h2
+          class="text-4xl !leading-[1.15] font-bold tracking-tight lg:text-5xl"
+        >
+          Frequently Asked <br /> Questions
+        </h2>
+        <a
+          href={mainCTA.href}
+          class={cn(
+            buttonVariants({ variant: "default", size: "lg" }),
+            "mt-8 lg:mt-18"
+          )}
+        >
+          {mainCTA.title}
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </a>
+      </div>
+      <FaqAccordion faqData={siteDetails.faq} client:load />
+    </div>
+  </div>
+</section>

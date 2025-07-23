@@ -1,0 +1,26 @@
+---
+import BaseHead from "@/components/layout/base-head.astro";
+import TailwindIndicator from "@/components/tailwind-indicator.astro";
+
+import { cn } from "@/lib/utils";
+
+type Props = {
+  title: string;
+  description?: string;
+  bodyClass?: string;
+  image?: string;
+};
+
+const { title, description, bodyClass, image } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <BaseHead title={title} description={description} image={image} />
+  </head>
+  <body class={cn("flex flex-col min-h-screen", bodyClass)}>
+    <slot />
+    <TailwindIndicator />
+  </body>
+</html>

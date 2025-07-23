@@ -1,0 +1,69 @@
+{
+  "site": "Astro AI Template",
+  "tagline": "Build Smarter, Faster: Your AI-Powered Astro Template",
+  "about": "The Astro AI Template is a cutting-edge starter kit designed for developers and businesses looking to leverage the power of AI in their web projects. It provides a robust foundation with pre-configured AI integrations, modern UI components, and optimized performance, enabling you to launch intelligent web experiences with unprecedented speed and efficiency.",
+  "faq": [
+    {
+      "question": "What is the Astro AI Template?",
+      "answer": "The Astro AI Template is a pre-built starter kit for web development, integrating AI capabilities directly into an Astro framework. It's designed to help developers quickly build intelligent, high-performance websites."
+    },
+    {
+      "question": "What kind of AI features are included?",
+      "answer": "The template includes integrations for AI-powered content generation, chatbot development, automation workflows, and custom language model training, providing a versatile toolkit for various AI applications."
+    },
+    {
+      "question": "Is this template suitable for beginners?",
+      "answer": "While some familiarity with Astro and web development is beneficial, the template is structured to be user-friendly, with clear documentation and modular components that simplify the development process."
+    },
+    {
+      "question": "Can I customize the AI integrations?",
+      "answer": "Absolutely. The template is built with flexibility in mind, allowing you to customize existing AI integrations or add new ones to suit your specific project requirements and use cases."
+    },
+    {
+      "question": "Where can I get support for the template?",
+      "answer": "Support is available through our community forums, detailed documentation, and premium support channels for advanced assistance. We're here to help you succeed with your AI-powered projects."
+    }
+  ],
+  "services": [
+    "AI chatbot development",
+    "AI-powered content generation",
+    "Automation & workflow design",
+    "AI strategy consulting",
+    "Custom-trained language models"
+  ],
+  "industries": [
+    "eCommerce",
+    "SaaS startups",
+    "marketing agencies",
+    "real estate",
+    "education",
+    "healthcare",
+    "legal services"
+  ],
+  "useCases": [
+    "Automating lead qualification",
+    "Generating blog articles",
+    "Answering customer questions with trained chatbots",
+    "Automating workflows like proposals or emails",
+    "Summarizing customer feedback"
+  ],
+  "features": [
+    "Chatbot training with your data",
+    "Blog and content generation tools",
+    "Autonomous GPT agents",
+    "Custom API integrations",
+    "Full control over branding, tone, and voice"
+  ],
+  "toneAndStyle": "Innovative, professional, and user-friendly, focusing on clarity and practical benefits of AI.",
+  "customerPersonas": [
+    "Web Developers",
+    "SaaS Founders",
+    "Digital Marketers",
+    "Agencies"
+  ],
+  "sampleContentIdeas": [
+    "How the Astro AI Template Accelerates Your Web Development",
+    "Integrating AI: A Guide to the Astro AI Template's Core Features",
+    "Building Intelligent Websites: Real-World Use Cases with Astro AI Template"
+  ]
+}

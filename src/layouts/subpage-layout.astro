@@ -1,0 +1,71 @@
+---
+import type { CollectionEntry } from "astro:content";
+import MainLayout from "./main-layout.astro";
+import BreadCrumb from "@/components/bread-crumb.astro";
+import { cn } from "@/lib/utils";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
+
+import { ArrowRight } from "lucide-react";
+
+const { mainCTA, secondaryCTA } = siteConfig;
+
+type Props = CollectionEntry<"pages"> & { banner?: boolean };
+const { data: frontmatter } = Astro.props;
+const {
+  title,
+  description,
+  ogImage,
+  banner = false,
+  containerClass,
+} = frontmatter;
+const currentPath = Astro.url.pathname;
+---
+
+<MainLayout title={title} description={description} image={ogImage?.src}>
+  {
+    banner && (
+      <div class="bg-primary text-primary-foreground flex w-full flex-col items-center justify-center py-18">
+        <div class="container flex flex-col gap-6">
+          <BreadCrumb currentPath={currentPath} />
+          <div>
+            <h1 class="mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
+              {title}
+            </h1>
+            <p class="text-primary-foreground/80 mb-8 max-w-3xl text-lg leading-relaxed md:text-xl">
+              {description}
+            </p>
+          </div>
+          <div class="flex flex-col gap-4 sm:flex-row">
+            <a
+              href={mainCTA.href}
+              class={cn(
+                buttonVariants({ variant: "outline", size: "lg" }),
+                "text-primary"
+              )}
+            >
+              {mainCTA.title}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+
+            {secondaryCTA && (
+              <a
+                href={secondaryCTA.href}
+                class={cn(
+                  buttonVariants({ variant: "link", size: "lg" }),
+                  "text-primary-foreground"
+                )}
+              >
+                {" "}
+                {secondaryCTA.title}{" "}
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    )
+  }
+  <div class={cn("relative container py-12 lg:py-24", containerClass)}>
+    <slot />
+  </div>
+</MainLayout>

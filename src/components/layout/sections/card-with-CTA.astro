@@ -1,0 +1,68 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
+interface Props {
+  title: string;
+  description: string;
+  CTA?: {
+    title: string;
+    href: string;
+  };
+  secondaryCTA?: {
+    title: string;
+    href: string;
+  };
+}
+
+const { title, description, CTA, secondaryCTA } = Astro.props;
+---
+
+<div>
+  <Card className="h-full w-auto max-w-md">
+    <CardHeader>
+      <CardTitle className="text-2xl font-bold" set:html={title} />
+      <CardDescription className="text-base" set:html={description} />
+    </CardHeader>
+    <CardContent>
+      <slot />
+    </CardContent>
+    <CardFooter className="flex flex-col gap-3">
+      {
+        CTA && (
+          <a
+            href={CTA.href}
+            class={cn(buttonVariants({ variant: "outline" }), "w-full")}
+            set:html={CTA.title}
+          />
+        )
+      }
+      {
+        secondaryCTA ? (
+          <a
+            href={secondaryCTA.href}
+            class={cn(buttonVariants({ variant: "link" }), "w-full")}
+            set:html={secondaryCTA.title}
+          />
+        ) : (
+          <a
+            href={siteConfig.mainCTA.href}
+            class={cn(buttonVariants({ variant: "link" }), "w-full")}
+          >
+            {siteConfig.mainCTA.title}
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </a>
+        )
+      }
+    </CardFooter>
+  </Card>
+</div>
