@@ -4,5 +4,22 @@ import MainLayout from "@/layouts/main-layout.astro";
 ---
 
 <MainLayout title="Schedule an appointment">
-  <BookAppointment />
+  <section
+    class="container mx-auto max-w-7xl px-6 py-6 md:px-8 lg:py-12 xl:px-12"
+  >
+    <div
+      class="flex flex-col items-center justify-center gap-6 lg:flex-row lg:items-stretch"
+    >
+      <div class="w-full">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31105.562325024348!2d77.55626208351357!3d12.959351985838328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15e4b434e601%3A0x1a69fbe395219f75!2sTipu%20Sultan's%20Summer%20Palace!5e0!3m2!1sen!2sin!4v1753302608481!5m2!1sen!2sin"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="h-[350px] w-full rounded-md lg:h-[480px]"></iframe>
+      </div>
+      <div class="w-full"><BookAppointment /></div>
+    </div>
+  </section>
 </MainLayout>
