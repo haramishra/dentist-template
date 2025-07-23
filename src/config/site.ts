@@ -9,7 +9,7 @@ export const siteConfig: SiteConfig = {
     "smiles.co provides comprehensive dental care for the whole family, ensuring healthy and radiant smiles with personalized treatment and advanced technology.",
   ogImage:
     "https://res.cloudinary.com/dq1btdcg9/image/upload/v1723759144/og-image_vkv36y.jpg",
-  whatsappNumber: "910987654321",
+  whatsappNumber: "918018849775",
   socialLinks: [
     {
       type: "Github",
