@@ -1,69 +1,61 @@
 {
-  "site": "Astro AI Template",
-  "tagline": "Build Smarter, Faster: Your AI-Powered Astro Template",
-  "about": "The Astro AI Template is a cutting-edge starter kit designed for developers and businesses looking to leverage the power of AI in their web projects. It provides a robust foundation with pre-configured AI integrations, modern UI components, and optimized performance, enabling you to launch intelligent web experiences with unprecedented speed and efficiency.",
+  "site": "smiles.co",
+  "tagline": "Your Brightest Smile Starts Here",
+  "about": "At smiles.co, we believe everyone deserves a healthy, radiant smile. Our dedicated team of dental professionals is committed to providing exceptional, personalized care in a comfortable and welcoming environment. From routine check-ups to advanced cosmetic procedures, we use the latest technology to ensure your dental health and aesthetic goals are met with precision and compassion.",
   "faq": [
     {
-      "question": "What is the Astro AI Template?",
-      "answer": "The Astro AI Template is a pre-built starter kit for web development, integrating AI capabilities directly into an Astro framework. It's designed to help developers quickly build intelligent, high-performance websites."
+      "question": "What dental services does smiles.co offer?",
+      "answer": "smiles.co provides a comprehensive range of dental services, including general dentistry (check-ups, cleanings, fillings), cosmetic dentistry (whitening, veneers, bonding), restorative dentistry (crowns, bridges, implants), and preventative care."
     },
     {
-      "question": "What kind of AI features are included?",
-      "answer": "The template includes integrations for AI-powered content generation, chatbot development, automation workflows, and custom language model training, providing a versatile toolkit for various AI applications."
+      "question": "How often should I visit the dentist?",
+      "answer": "We recommend visiting smiles.co for a routine check-up and cleaning every six months. Regular visits help maintain optimal oral health and allow us to detect and address any potential issues early."
     },
     {
-      "question": "Is this template suitable for beginners?",
-      "answer": "While some familiarity with Astro and web development is beneficial, the template is structured to be user-friendly, with clear documentation and modular components that simplify the development process."
+      "question": "Do you accept dental insurance?",
+      "answer": "Yes, smiles.co accepts most major dental insurance plans. Our team will gladly assist you in understanding your benefits and filing claims to maximize your coverage. Please contact us for more details."
     },
     {
-      "question": "Can I customize the AI integrations?",
-      "answer": "Absolutely. The template is built with flexibility in mind, allowing you to customize existing AI integrations or add new ones to suit your specific project requirements and use cases."
+      "question": "What should I do in a dental emergency?",
+      "answer": "If you experience a dental emergency, such as severe pain, a knocked-out tooth, or a broken crown, please contact smiles.co immediately. We prioritize emergency cases and will do our best to see you as soon as possible."
     },
     {
-      "question": "Where can I get support for the template?",
-      "answer": "Support is available through our community forums, detailed documentation, and premium support channels for advanced assistance. We're here to help you succeed with your AI-powered projects."
+      "question": "Is smiles.co suitable for children?",
+      "answer": "Absolutely! smiles.co welcomes patients of all ages, including children. We strive to create a positive and comfortable experience for our youngest patients, fostering good oral hygiene habits from an early age."
     }
   ],
   "services": [
-    "AI chatbot development",
-    "AI-powered content generation",
-    "Automation & workflow design",
-    "AI strategy consulting",
-    "Custom-trained language models"
+    "General Dentistry",
+    "Cosmetic Dentistry",
+    "Restorative Dentistry",
+    "Preventative Care",
+    "Emergency Dental Services"
   ],
-  "industries": [
-    "eCommerce",
-    "SaaS startups",
-    "marketing agencies",
-    "real estate",
-    "education",
-    "healthcare",
-    "legal services"
-  ],
+  "industries": ["Dental Care", "Healthcare", "Family Services"],
   "useCases": [
-    "Automating lead qualification",
-    "Generating blog articles",
-    "Answering customer questions with trained chatbots",
-    "Automating workflows like proposals or emails",
-    "Summarizing customer feedback"
+    "Routine Check-ups",
+    "Cosmetic Enhancements",
+    "Emergency Treatments",
+    "Pediatric Dentistry",
+    "Oral Health Education"
   ],
   "features": [
-    "Chatbot training with your data",
-    "Blog and content generation tools",
-    "Autonomous GPT agents",
-    "Custom API integrations",
-    "Full control over branding, tone, and voice"
+    "Experienced & Compassionate Team",
+    "State-of-the-Art Technology",
+    "Personalized Treatment Plans",
+    "Comfortable & Welcoming Environment",
+    "Flexible Scheduling & Payment Options"
   ],
-  "toneAndStyle": "Innovative, professional, and user-friendly, focusing on clarity and practical benefits of AI.",
+  "toneAndStyle": "Warm, compassionate, professional, and reassuring, focusing on patient comfort and trust.",
   "customerPersonas": [
-    "Web Developers",
-    "SaaS Founders",
-    "Digital Marketers",
-    "Agencies"
+    "Families with young children",
+    "Individuals seeking cosmetic dental improvements",
+    "Patients needing restorative dental work",
+    "Anyone prioritizing preventative oral health"
   ],
   "sampleContentIdeas": [
-    "How the Astro AI Template Accelerates Your Web Development",
-    "Integrating AI: A Guide to the Astro AI Template's Core Features",
-    "Building Intelligent Websites: Real-World Use Cases with Astro AI Template"
+    "Achieving Your Dream Smile: A Guide to Cosmetic Dentistry at smiles.co",
+    "The Importance of Regular Dental Check-ups: Why Preventative Care Matters",
+    "Understanding Dental Implants: A Permanent Solution for Missing Teeth"
   ]
 }

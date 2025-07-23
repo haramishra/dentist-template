@@ -3,10 +3,10 @@ import { ArrowRight } from "lucide-react";
 
 export const siteConfig: SiteConfig = {
   //meta config
-  name: "Astro AI Template",
-  title: "Astro AI Template - Build Smarter, Faster",
+  name: "smiles.co",
+  title: "smiles.co - Your Brightest Smile Starts Here",
   description:
-    "A cutting-edge Astro template powered by AI for intelligent web development.",
+    "smiles.co provides comprehensive dental care for the whole family, ensuring healthy and radiant smiles with personalized treatment and advanced technology.",
   ogImage:
     "https://res.cloudinary.com/dq1btdcg9/image/upload/v1723759144/og-image_vkv36y.jpg",
   socialLinks: [
@@ -41,21 +41,21 @@ export const siteConfig: SiteConfig = {
   },
 
   mainCTA: {
-    title: "Get Started",
+    title: "Book Appointment",
     href: `/contact`,
     icon: ArrowRight,
   },
   secondaryCTA: {
-    title: "Learn More",
-    href: `/about`,
+    title: "Our Services",
+    href: `/services`,
   },
   contact: {
-    email: [{ link: "mailto:info@astroait.com", title: "info@astroait.com" }],
-    phone: [{ link: "tel:+15551234567", title: "+1 (555) 123-4567" }],
+    email: [{ link: "mailto:info@smiles.co", title: "info@smiles.co" }],
+    phone: [{ link: "tel:+15559876543", title: "+1 (555) 987-6543" }],
     address: [
       {
-        link: "https://maps.google.com/?q=123+AI+Lane",
-        title: "123 AI Lane, Tech City, CA 90210",
+        link: "https://maps.google.com/?q=456+Dental+Drive",
+        title: "456 Dental Drive, Smile City, CA 90210",
       },
     ],
   },
