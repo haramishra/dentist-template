@@ -3,70 +3,53 @@ import { Image } from "astro:assets";
 import placeholder from "@assets/images/blog/placeholder-4.jpg";
 import { Button, buttonVariants } from "../ui/button";
 import { siteConfig } from "@/config/site";
+import { Badge } from "../ui/badge";
+import { ArrowUpRight } from "lucide-react";
+import heroImage1 from "@assets/images/landing/hero-1.jpg";
+import heroImage2 from "@assets/images/landing/hero-2.jpg";
 const { mainCTA, secondaryCTA } = siteConfig;
 ---
 
-<section class="">
-  <div class="container py-12">
-    <div class="grid grid-cols-1 gap-4 pb-12 lg:grid-cols-2 lg:gap-12">
-      <div>
-        <h1
-          class="mb-8 flex max-w-6xl text-4xl leading-none font-semibold tracking-tight text-gray-800 md:text-6xl"
-        >
-          Transform your business with our landing page blocks
-        </h1>
-      </div>
-      <div>
-        <p class="text-lg leading-normal text-gray-500">
-          Voluptate do officia voluptate laborum esse non ipsum cillum. Aliqua
-          eiusmod exercitation culpa dolore duis aliquip laborum mollit sit qui
-          labore veniam. Fugiat laboris proident qui sit esse mollit nisi. Qui
-          cupidatat officia do non. Labore fugiat dolore aute elit esse id
-          commodo ad culpa ullamco eu qui consectetur. Laboris adipisicing et
-          sint dolor tempor officia.
-        </p>
-        <div class="mt-8 flex justify-start gap-4">
-          {
-            secondaryCTA && (
-              <a
-                class={buttonVariants({ size: "lg", variant: "outline" })}
-                href={secondaryCTA.href}
-              >
-                {secondaryCTA.title || "Get a quote"}
-              </a>
-            )
-          }
-          <a class={buttonVariants({ size: "lg" })} href={mainCTA.href}>
-            {mainCTA.title || "Get in Touch"}
-          </a>
-        </div>
+<div class="flex min-h-screen items-center justify-center overflow-hidden">
+  <div
+    class="mx-auto grid w-full max-w-screen-xl gap-12 px-6 py-12 lg:grid-cols-2 lg:py-0"
+  >
+    <div class="my-auto">
+      <Badge className="rounded-full border-none py-1">
+        Your Brightest Smile Starts Here
+      </Badge>
+      <h1
+        class="mt-6 max-w-[17ch] text-4xl !leading-[1.2] font-bold tracking-tight md:text-5xl lg:text-[2.75rem] xl:text-5xl"
+      >
+        Exceptional Dental Care for a Healthier, Happier You
+      </h1>
+      <p class="mt-6 max-w-[60ch] text-lg">
+        At smiles.co, we're dedicated to providing top-tier dental services in a
+        comfortable and caring environment. From routine check-ups to advanced
+        cosmetic procedures, your oral health is our priority.
+      </p>
+      <div class="mt-8 flex justify-start gap-4">
+        {
+          secondaryCTA && (
+            <a
+              class={buttonVariants({ size: "lg", variant: "outline" })}
+              href={secondaryCTA.href}
+            >
+              {secondaryCTA.title || "Get a quote"}
+            </a>
+          )
+        }
+        <a class={buttonVariants({ size: "lg" })} href={mainCTA.href}>
+          {mainCTA.title || "Get in Touch"}
+        </a>
       </div>
     </div>
-    <div class="relative h-[500px] flex-1">
-      <div
-        class="absolute inset-0 flex size-full items-center justify-center overflow-hidden rounded-xl object-cover"
-      >
-        <Image
-          src={placeholder}
-          alt="video"
-          class="inline-block size-full max-w-full object-cover align-middle"
-        />
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          viewBox="0 0 24 24"
-          class="absolute z-20 size-14 text-white"
-        >
-          <path
-            fill="currentColor"
-            d="m10.65 15.75l4.875-3.125q.35-.225.35-.625t-.35-.625L10.65 8.25q-.375-.25-.763-.038t-.387.663v6.25q0 .45.388.663t.762-.038M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
-          >
-          </path>
-        </svg>
-        <span class="absolute inset-0 z-10 bg-black/50"></span>
-      </div>
+    <div>
+      <Image
+        src={heroImage2}
+        alt={"Smiling person in a modern dental clinic"}
+        class="aspect-video w-full rounded-xl object-cover lg:aspect-auto lg:h-[calc(100vh-16rem)] lg:w-[1000px]"
+      />
     </div>
   </div>
-</section>
+</div>
