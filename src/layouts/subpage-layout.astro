@@ -2,9 +2,10 @@
 import type { CollectionEntry } from "astro:content";
 import MainLayout from "./main-layout.astro";
 import BreadCrumb from "@/components/bread-crumb.astro";
-import { cn } from "@/lib/utils";
+import { ContactForm } from "@/components/forms/banner-contact";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
 import { ArrowRight } from "lucide-react";
 
@@ -25,41 +26,46 @@ const currentPath = Astro.url.pathname;
 <MainLayout title={title} description={description} image={ogImage?.src}>
   {
     banner && (
-      <div class="bg-primary text-primary-foreground flex w-full flex-col items-center justify-center py-18">
-        <div class="container flex flex-col gap-6">
-          <BreadCrumb currentPath={currentPath} />
-          <div>
-            <h1 class="mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
-              {title}
-            </h1>
-            <p class="text-primary-foreground/80 mb-8 max-w-3xl text-lg leading-relaxed md:text-xl">
-              {description}
-            </p>
-          </div>
-          <div class="flex flex-col gap-4 sm:flex-row">
-            <a
-              href={mainCTA.href}
-              class={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
-                "text-primary"
-              )}
-            >
-              {mainCTA.title}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-
-            {secondaryCTA && (
+      <div class="bg-primary text-primary-foreground w-full py-18">
+        <div class="container grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          <div class="flex flex-col gap-6">
+            <BreadCrumb currentPath={currentPath} />
+            <div>
+              <h1 class="mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
+                {title}
+              </h1>
+              <p class="text-primary-foreground/80 mb-8 max-w-3xl text-lg leading-relaxed md:text-xl">
+                {description}
+              </p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row">
               <a
-                href={secondaryCTA.href}
+                href={mainCTA.href}
                 class={cn(
-                  buttonVariants({ variant: "link", size: "lg" }),
-                  "text-primary-foreground"
+                  buttonVariants({ variant: "default", size: "lg" }),
+                  "border-primary-foreground border"
                 )}
               >
-                {" "}
-                {secondaryCTA.title}{" "}
+                {mainCTA.title}
+                <ArrowRight className="ml-2 h-4 w-4" />
               </a>
-            )}
+
+              {secondaryCTA && (
+                <a
+                  href={secondaryCTA.href}
+                  class={cn(
+                    buttonVariants({ variant: "link", size: "lg" }),
+                    "text-primary-foreground"
+                  )}
+                >
+                  {" "}
+                  {secondaryCTA.title}{" "}
+                </a>
+              )}
+            </div>
+          </div>
+          <div class="w-full max-w-md place-self-center lg:place-self-end">
+            <ContactForm />
           </div>
         </div>
       </div>

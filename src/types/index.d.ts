@@ -18,6 +18,7 @@ export type SiteConfig = {
   description: string;
   title: string;
   ogImage: string;
+  whatsappNumber: string;
   socialLinks: {
     type: string;
     link: string;
